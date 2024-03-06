@@ -1,0 +1,36 @@
+{
+  "name": "namada-connect-fixed",
+  "version": "0.0.0",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/developerisnow/namada-connect.git"
+  },
+  "scripts": {
+    "build": "tsc --declaration && vite build",
+    "publish": "tsc --declaration && npm publish",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./dist/*": "./dist/*"
+  },
+  "dependencies": {
+    "@dao-xyz/borsh": "^5.1.5",
+    "bignumber.js": "^9.1.2",
+    "bn.js": "^5.2.1",
+    "slip44": "^3.0.11"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.0.2",
+    "@typescript-eslint/parser": "^7.0.2",
+    "eslint": "^8.56.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.4"
+  }
+}
